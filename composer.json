@@ -1,0 +1,33 @@
+{
+    "name": "schumacherfm/mage2-advanced-rest-permissions",
+    "description": "Magento2 Advanced REST permission for usage with AngularJS",
+    "require": {
+        "magento/framework": "*",
+        "magento/module-webapi": "*",
+        "magento/module-integration": "*"
+    },
+    "suggest":{
+        "magento/magento-composer-installer": "*"
+    },
+    "type": "magento2-module",
+    "version": "0.0.1",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "extra": {
+        "map": [
+            [
+                "*",
+                "SchumacherFM/AdvancedRESTPerms"
+            ]
+        ]
+    },
+    "authors": [
+        {
+            "name": "Cyrill Schumacher",
+            "homepage": "http://cyrillschumacher.com/",
+            "role": "Developer"
+        }
+    ]
+}
