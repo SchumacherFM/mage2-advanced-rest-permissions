@@ -6,9 +6,6 @@
         "magento/module-webapi": "*",
         "magento/module-integration": "*"
     },
-    "suggest":{
-        "magento/magento-composer-installer": "*"
-    },
     "type": "magento2-module",
     "version": "0.0.1",
     "license": [

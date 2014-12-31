@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/system_file.xsd">
+    <system>
+        <section id="webapi">
+            <group id="restperms" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>Advanced REST Permissions [SchumacherFM]</label>
+                <field id="charset" translate="label comment" type="select" sortOrder="10" showInDefault="1">
+                    <label>Auto customer REST access</label>
+                    <source_model>Magento\Backend\Model\Config\Source\Yesno</source_model>
+                    <comment>A frontend customer will have write access to the checkout/address/etc section
+                        once his account is created via REST request. Customer must be logged in.
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

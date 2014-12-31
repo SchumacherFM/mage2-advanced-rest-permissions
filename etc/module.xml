@@ -1,5 +1,11 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd">
-    <module name="SchumacherFM_AdvancedRESTPerms" schema_version="0" active="true">
+    <module name="SchumacherFM_AdvancedRESTPerms" schema_version="0">
+        <sequence>
+            <module name="Magento_Core"/>
+            <module name="Magento_Store"/>
+            <module name="Magento_Integration"/>
+            <module name="Magento_Backend"/>
+        </sequence>
     </module>
 </config>
