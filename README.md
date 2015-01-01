@@ -20,10 +20,10 @@ Login feature integrated in CustomerTokenService via route /V1/integration/custo
 - Extend Magento\Webapi\Model\Plugin\Service\V1\Integration and override protected methods to allow GUESTS
 - Add observer to REST: "customer create" that an additional REST role in `authorization_role` table will be created
 on a per customer basis. A customer can then have write access to the checkout/account/wishlist/etc.
+- `<route url="/V1/carts/" method="POST">` can `createAnonymousCart()` BUT is secured via resource Magento_Sales::create
 - Checkout plugins in Magento\Checkout\Model\Cart\Access needs to be modified so that UserContextInterface::USER_TYPE_CUSTOMER
 will also be accepted
-- `<route url="/V1/carts/" method="POST">` can `createAnonymousCart()` BUT is secured via resource Magento_Sales::create
-- Magento\Customer\Api looks well designed.
+- Magento\Customer\Api looks well designed :-)
 
 As long as Mage2 is in beta phase it is not worth working on the above mentioned points. These issues needs to be added
 and fixed.
