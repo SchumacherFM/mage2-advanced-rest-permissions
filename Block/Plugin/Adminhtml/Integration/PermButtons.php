@@ -2,26 +2,26 @@
 
 namespace SchumacherFM\AdvancedRESTPerms\Block\Plugin\Adminhtml\Integration;
 
-use \Magento\Integration\Block\Adminhtml\Integration\Interceptor;
+use \Magento\Integration\Block\Adminhtml\Integration\Interceptor as IntegrationInterceptor;
 
 class PermButtons
 {
     /**
-     * @param Interceptor $integration
+     * @param IntegrationInterceptor $subject
      * @param \Magento\Framework\View\Layout\Interceptor $layout
      * @return array
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function beforeSetLayout(
-        Interceptor $integration,
+        IntegrationInterceptor $subject,
         \Magento\Framework\View\Layout\Interceptor $layout
     )
     {
-        $integration->addButton(
+        $subject->addButton(
             'add_guest_access',
             [
                 'label' => 'Add Guest Access',
-                'onclick' => 'setLocation(\'' . $this->getAddGuestUrl($integration) . '\')',
+                'onclick' => 'setLocation(\'' . $this->getAddGuestUrl($subject) . '\')',
                 'class' => 'add'
             ]
         );
@@ -30,10 +30,10 @@ class PermButtons
     }
 
     /**
-     * @param Interceptor $integration
+     * @param IntegrationInterceptor $integration
      * @return mixed|null|string
      */
-    protected function getAddGuestUrl(Interceptor $integration)
+    protected function getAddGuestUrl(IntegrationInterceptor $integration)
     {
         return $integration->getUrl('advancedRest/integration/createGuest');
     }

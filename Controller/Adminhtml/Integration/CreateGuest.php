@@ -69,7 +69,7 @@ class CreateGuest extends Action
     {
         try {
             $integrationData = [
-                'name' => 'New Guest Access [rename]',
+                'name' => 'New Guest Access',
                 'email' => '',
                 'status' => 0,
                 'consumer_id' => new \Zend_Db_Expr('NULL'),

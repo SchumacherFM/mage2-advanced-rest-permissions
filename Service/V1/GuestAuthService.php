@@ -30,7 +30,7 @@ class GuestAuthService extends AuthorizationService implements GuestAuthServiceI
         $role = $this->_roleFactory->create();
         $role->setRoleName($roleName)
             ->setUserType(UserContextInterface::USER_TYPE_GUEST)
-            ->setUserId($integrationId)
+            ->setUserId(0)
             ->setRoleType(\Magento\Authorization\Model\Acl\Role\Group::ROLE_TYPE)
             ->setParentId(0)
             ->save();
