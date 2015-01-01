@@ -1,6 +1,10 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
     <type name="Magento\Integration\Block\Adminhtml\Integration">
-        <plugin name="restPermButtons" type="SchumacherFM\AdvancedRESTPerms\Block\Plugin\Adminhtml\Integration\PermButtons"/>
+        <plugin name="restPermButtons"
+                type="SchumacherFM\AdvancedRESTPerms\Block\Plugin\Adminhtml\Integration\PermButtons"/>
     </type>
+    <preference for="SchumacherFM\AdvancedRESTPerms\Service\V1\GuestAuthServiceInterface"
+                type="SchumacherFM\AdvancedRESTPerms\Service\V1\GuestAuthService"/>
+
 </config>

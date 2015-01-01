@@ -9,9 +9,9 @@
                     <argument name="header" xsi:type="string" translate="true">User Type</argument>
                     <argument name="index" xsi:type="string">user_type</argument>
                     <argument name="type" xsi:type="string">options</argument>
-                    <argument name="options" xsi:type="options" model="SchumacherFM\AdvancedRESTPerms\Model\Source\UserTypes"/>
-                    <argument name="column_css_class" xsi:type="string">col-id</argument>
-                    <argument name="header_css_class" xsi:type="string">col-id</argument>
+                    <argument name="width" xsi:type="string">100px</argument>
+                    <argument name="options" xsi:type="options"
+                              model="SchumacherFM\AdvancedRESTPerms\Model\Source\UserTypes"/>
                 </arguments>
             </block>
         </referenceBlock>

@@ -4,11 +4,18 @@ Magento2 Advanced Rest Permissions
 Adds new REST permission to the Integration and Webapi Module especially when you
 would like to use Magento2 with an AngularJS frontend.
 
+Don't use this modules. There are many missing features in Magento2 which still needs to be implemented.
+Especially in app/code/Magento/Catalog/etc/acl.xml to allow a more granular access.
 
 Installation Instructions
 -------------------------
 
 Please use composer; @todo
+
+Tests
+-----
+
+Worse excuse: No time :-(
 
 History
 -------
