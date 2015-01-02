@@ -8,6 +8,19 @@ run anywhere.
 This module was only created for learning purposes but I've figured out after deeper code review
 that overall integration of the WebAPI needs more changes. 
 
+At the moment this module adds a guest user to the `authorization_role` table with read/write permissions
+to Magento_Catalog::catalog, Magento_Catalog::catalog_inventory, Magento_Catalog::products and
+Magento_Catalog::categories. Due to the missing granularity of permissions we have the write access. See below
+for a more detailed description.
+
+Switch to the *Integrations* backend section and click on the button *Add Guest Access*. That's it. You cannot
+edit this integration nor active it (See below). The following REST routes (GET, PUT, POST, DELETE) are available:
+
+- http://magento2.local/rest/V1/products/:sku/media
+- http://magento2.local/rest/V1/categories
+- http://magento2.local/rest/V1/categories/:id/products
+
+
 The further modifications will be:
 
 - Create a guest token only for specific routes like add to cart. Use this token also for the checkout. Avoid to 
@@ -24,6 +37,8 @@ on a per customer basis. A customer can then have write access to the checkout/a
 - Checkout plugins in Magento\Checkout\Model\Cart\Access needs to be modified so that UserContextInterface::USER_TYPE_CUSTOMER
 will also be accepted
 - Magento\Customer\Api looks well designed :-)
+- Fix all performance issues in the Webapi module (see todo comments in the code)
+- Fix bugs (sorting) when searching for products
 
 As long as Mage2 is in beta phase it is not worth working on the above mentioned points. These issues needs to be added
 and fixed.
