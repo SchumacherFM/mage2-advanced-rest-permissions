@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--File name of this file must match the file which we would like to extend-->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+      xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/magento/magento2/master/lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="permission.role.grid.columnSet">
             <block class="Magento\Backend\Block\Widget\Grid\Column" as="user_type">

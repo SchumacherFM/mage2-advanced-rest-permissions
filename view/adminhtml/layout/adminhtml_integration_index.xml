@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--File name of this file must match the file which we would like to extend-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/magento/magento2/master/lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.actions.toolbar">
+            <block class="SchumacherFM\AdvancedRESTPerms\Block\Adminhtml\GuestButton" as="integration_guest_button"/>
+        </referenceBlock>
+    </body>
+</page>
