@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+
+    <route url="/V1A/products" method="GET">
+        <service class="Magento\Catalog\Api\ProductRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::products"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/:productSku" method="GET">
+        <service class="Magento\Catalog\Api\ProductRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::products"/>
+        </resources>
+    </route>
+
+    <route url="/V1A/products/attributes/types" method="GET">
+        <service class="Magento\Catalog\Api\ProductAttributeTypesListInterface" method="getItems"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::attributes_attributes"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/attributes/:attributeCode" method="GET">
+        <service class="Magento\Catalog\Api\ProductAttributeRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::attributes_attributes"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/attributes" method="GET">
+        <service class="Magento\Catalog\Api\ProductAttributeRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::attributes_attributes"/>
+        </resources>
+    </route>
+    <route url="/V1A/categories/attributes/:attributeCode" method="GET">
+        <service class="Magento\Catalog\Api\CategoryAttributeRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::attributes_attributes"/>
+        </resources>
+    </route>
+    <route url="/V1A/categories/attributes" method="GET">
+        <service class="Magento\Catalog\Api\CategoryAttributeRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::attributes_attributes"/>
+        </resources>
+    </route>
+    <route url="/V1A/categories/attributes/:attributeCode/options" method="GET">
+        <service class="Magento\Catalog\Api\CategoryAttributeOptionManagementInterface" method="getItems"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::attributes_attributes"/>
+        </resources>
+    </route>
+
+    <route url="/V1A/products/types" method="GET">
+        <service class="Magento\Catalog\Api\ProductTypeListInterface" method="getProductTypes"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::products"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/attribute-sets/sets/list" method="GET">
+        <service class="Magento\Catalog\Api\AttributeSetRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::sets"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/attribute-sets/:attributeSetId" method="GET">
+        <service class="Magento\Catalog\Api\AttributeSetRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::sets"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/attribute-sets/:attributeSetId" method="DELETE">
+        <service class="Magento\Catalog\Api\AttributeSetRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::sets"/>
+        </resources>
+    </route>
+
+    <route url="/V1A/products/attribute-sets/:attributeSetId/attributes" method="GET">
+        <service class="Magento\Catalog\Api\ProductAttributeManagementInterface" method="getAttributes"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::sets"/>
+        </resources>
+    </route>
+
+    <route url="/V1A/products/attribute-sets/groups/list" method="GET">
+        <service class="Magento\Catalog\Api\ProductAttributeGroupRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::sets"/>
+        </resources>
+    </route>
+
+    <route url="/V1A/products/attributes/:attributeCode/options" method="GET">
+        <service class="Magento\Catalog\Api\ProductAttributeOptionManagementInterface" method="getItems"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::attributes_attributes"/>
+        </resources>
+    </route>
+
+    <route url="/V1A/products/media/types/:attributeSetName" method="GET">
+        <service class="Magento\Catalog\Api\ProductMediaAttributeManagementInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/:productSku/media/:imageId" method="GET">
+        <service class="Magento\Catalog\Api\ProductAttributeMediaGalleryManagementInterface" method="get"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+
+    <route url="/V1A/products/:productSku/media" method="GET">
+        <service class="Magento\Catalog\Api\ProductAttributeMediaGalleryManagementInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+
+    <!-- Group Price -->
+    <route url="/V1A/products/:productSku/group-prices/" method="GET">
+        <service class="Magento\Catalog\Api\ProductGroupPriceManagementInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+
+    <!-- Tear Price -->
+    <route url="/V1A/products/:productSku/group-prices/:customerGroupId/tiers" method="GET">
+        <service class="Magento\Catalog\Api\ProductTierPriceManagementInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+
+    <route url="/V1A/categories/:categoryId" method="GET">
+        <service class="Magento\Catalog\Api\CategoryRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::categories"/>
+        </resources>
+    </route>
+
+    <route url="/V1A/categories" method="GET">
+        <service class="Magento\Catalog\Api\CategoryManagementInterface" method="getTree"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::categories"/>
+        </resources>
+    </route>
+
+    <!-- Product Custom Options -->
+    <route url="/V1A/products/options/types" method="GET">
+        <service class="Magento\Catalog\Api\ProductCustomOptionTypeListInterface" method="getItems"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/:productSku/options" method="GET">
+        <service class="Magento\Catalog\Api\ProductCustomOptionRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/:productSku/options/:optionId" method="GET">
+        <service class="Magento\Catalog\Api\ProductCustomOptionRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+
+    <!-- Product Links -->
+    <route url="/V1A/products/links/types" method="GET">
+        <service class="Magento\Catalog\Api\ProductLinkTypeListInterface" method="getItems"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/links/:type/attributes" method="GET">
+        <service class="Magento\Catalog\Api\ProductLinkTypeListInterface" method="getItemAttributes"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+    <route url="/V1A/products/:productSku/links/:type" method="GET">
+        <service class="Magento\Catalog\Api\ProductLinkManagementInterface" method="getLinkedItemsByType"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::catalog"/>
+        </resources>
+    </route>
+
+    <!-- Category Product Links -->
+    <route url="/V1A/categories/:categoryId/products" method="GET">
+        <service class="Magento\Catalog\Api\CategoryLinkManagementInterface" method="getAssignedProducts"/>
+        <resources>
+            <resource ref="Schumacherfm_AdvancedRESTPerms::categories"/>
+        </resources>
+    </route>
+
+</routes>
