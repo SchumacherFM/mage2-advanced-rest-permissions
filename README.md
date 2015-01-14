@@ -71,8 +71,6 @@ Support / Contribution
 
 Report a bug using the issue tracker or send us a pull request.
 
-Instead of forking I can add you as a Collaborator IF you really intend to develop on this module. Just ask :-)
-
 We work with: [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/) and [Semantic Versioning 2.0.0](http://semver.org/)
 
 Licence OSL-3
